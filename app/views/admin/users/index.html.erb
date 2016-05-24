@@ -1,0 +1,39 @@
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 margin-bottom-20">
+        <input type="search" class="form-control" id="input-search" placeholder="Search Users..." >
+      </div>
+    </div>
+        <div class="row">
+<div class="searchable-container">
+  <% @users.each do |user| %>
+    <%= link_to edit_admin_user_path(user) do %>
+          <div class="items col-xs-12 col-sm-12 col-md-12 col-lg-6 clearfix test">
+          
+                <span  class="delete-user" id="delete-user" user-id = '<%= user.id %>'>
+                  
+                <i class="fa fa-times-circle fa-2x" aria-hidden="true" id="delete user"></i></span>
+
+               <div class="info-block block-info clearfix" style="border-right-color:#0FBD44;"><!--ovdje ide generisana boja-->
+                  <div class="square-box pull-left">
+                         <i class="fa fa-user fa-5x"></i>
+                         <span class="username truncate"><%= user.user_type.name%></span>
+                  </div>
+                  <div class="info-box pull-right">
+                    <h5 class="name1 truncate">Email:<%= user.email %></h5>
+                    <h4><%= user.username %></h4>
+                    <p class="name1 truncate">First Name: <%= user.first_name%></p>
+                    <p>Last Name: <%= user.last_name %></p>
+                  </div>
+                </div>
+              </div>
+              <% end %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+
+
+
+    

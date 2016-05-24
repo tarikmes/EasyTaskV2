@@ -1,0 +1,34 @@
+<div class="container">
+	<div class="row">
+		<%= link_to user_tasks_path(current_user.id,:task_status_id=>1)do %>
+			<p class="col-md-6 "><i class="fa fa-list-alt" ></i>
+				Draft<strong><%= current_user.task_status_count(1) %></strong></p>
+		<% end %>
+
+		<%= link_to user_tasks_path(current_user.id,:task_status_id=>2)do %>
+			<p class="col-md-6 "><i class="fa fa-cog" ></i>
+				InProgress<strong><%= current_user.task_status_count(2) %></strong></p>
+		<% end %>
+
+		<%= link_to user_tasks_path(current_user.id,:task_status_id=>3)do %>
+			<p class="col-md-6 "><i class="fa fa-search" ></i>
+				Feedback<strong><%= current_user.task_status_count(3) %></strong></p>
+		<% end %>
+
+		<%= link_to user_tasks_path(current_user.id,:task_status_id=>4)do %>
+			<p class="col-md-6 "><i class="fa fa-check-square-o" ></i>
+				Finished<strong><%= current_user.task_status_count(4) %></strong></p>
+		<% end %>
+
+		<%= link_to user_tasks_path(current_user.id,:task_status_id=>5)do %>
+			<p class="col-md-6 "><i class="fa fa-minus-circle"></i>
+				Removed<strong><%= current_user.task_status_count(5) %></strong></p>
+		<% end %>
+	</div>
+</div>
+
+
+
+
+
+

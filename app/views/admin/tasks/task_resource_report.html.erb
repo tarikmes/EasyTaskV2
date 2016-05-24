@@ -1,0 +1,39 @@
+<%= search_form_for @search ,:url=> user_report_admin_tasks_path do |f| %>
+        <%= f.label :task_id_eq, "User" %>
+        <%= f.select :task_id_eq, options_from_collection_for_select(Task.all.order(:name), :id, :name) %>
+  <%= f.submit 'Search' %>
+<% end %>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="alert alert-success" style="display:none;">
+                <span class="glyphicon glyphicon-ok"></span> Drag table row and cange Order</div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            Task Name
+                        </th>
+                        <th>
+                            Description
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                  <% @resources.each do |resource| %>
+                    <tr>
+                        <td>
+                            <%= resource.resource.name %>
+                        </td>
+                        <td>
+                            <%= resource.used %>
+                        </td>
+                    </tr> 
+                    <% end %>            
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

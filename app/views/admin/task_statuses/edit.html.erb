@@ -1,0 +1,7 @@
+<%= form_for :task_status, url: admin_task_statuses_path  do |f| %>
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+  <%= f.submit %>
+  <% end %>

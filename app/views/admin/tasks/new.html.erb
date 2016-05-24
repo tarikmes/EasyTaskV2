@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="row task_form">
+    <div class="col-xs-12 col-sm-8 col-md-4 col-md-offset-4">
+      <div class="login-panel panel panel-default">
+        <div class="panel-heading">Create new task</div>
+          <div class="panel-body">
+            <%= form_for @task, url:admin_tasks_path, html: {role: "form"} do |f| %>
+              <fieldset>
+                <div class="form-group"> 
+                  <%= f.text_field :name, class: "form-control", placeholder: "Name" , :required => true  %>
+                </div>
+                <div class="form-group">
+                  <%= f.text_field :description, class: "form-control", placeholder: "Description" , :required => true   %>
+                </div>
+                <div class="form-group">  
+                  <%= f.text_field :estimate, class: "form-control", placeholder: "estimate" %>
+                </div>
+                <div class="form-group">
+                	<%= f.collection_select :user_id, User.all, :id, :first_name, {prompt: 'Select User'}, {class: "form-control" } %>
+                </div>
+                <div class="form-group">
+                  <%= f.collection_select :parent_task_id, Task.is_parent(1), :id, :name, {prompt: 'Select User Story'}, {class: "form-control" }  %>
+                </div>
+                <div class="form-group">
+                  <%= f.select :is_parent, options_for_select([['Task', 0],['User Story', 1]]),{prompt: 'Select parent'}, {class: "form-control"} %>
+                </div> 
+                <%= f.hidden_field :created_by, :value => current_user.id %>
+                <%= f.submit :submit, {class: "btn btn-primary" }  %>
+              </fieldset>
+
+              <%= f.fields_for :used_resources do |builder| %>
+                <%= render 'admin/used_resources/used_resources_new', f: builder %>
+              <% end %>
+              <fieldset>
+               <%= link_to_add_used_resources 'Add Resource', f, :used_resources %>
+             </fieldset>
+
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div><!-- /.col-->
+  </div><!-- /.row -->
+</div>
+
+
+

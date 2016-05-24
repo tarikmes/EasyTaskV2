@@ -1,0 +1,33 @@
+<h1>Task details</h1>
+</p>
+  <strong>Name:</strong>
+  <%= @task.name %>
+</p>
+</p>
+  <strong>Description:</strong>
+  <%= @task.description %>
+</p>
+</p>
+  <strong>Estimate:</strong>
+  <%= @task.estimate %>
+</p>
+</p>
+  <strong>Assigned to:</strong>
+  <%= @task.user.first_name %>
+</p>
+<strong>Parent Task ID:</strong>
+  <%= @parent.name %>
+</p>
+
+<h2>Childs</h2>
+<% @task.subs.each do |sub| %> 
+  <p>
+    <%= sub.id %>
+  </p>
+  <% end %>
+
+
+
+<h1><%= @test %></h1>
+
+

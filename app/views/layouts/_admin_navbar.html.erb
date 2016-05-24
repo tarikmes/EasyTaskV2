@@ -1,0 +1,42 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-5" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/login">Easy Task</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-5">
+      <ul class="nav navbar-nav">
+        <li><%= link_to 'Manage Users', admin_users_path%><span class="sr-only">(current)</span></a></li>
+        <li><%= link_to 'Manage Tasks', admin_tasks_path %></li>
+        <li><%= link_to 'Create Task',  new_admin_task_path  %></li>
+        <li><%= link_to 'Create User',  new_admin_user_path  %></li>
+        <li><%= link_to 'Create Resources',  new_admin_resource_path  %></li>
+        <li><%= link_to 'Manage Resources',  admin_resources_path  %></li>
+        <li><%= link_to 'Manage Account Details', edit_admin_user_path(current_user) %></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Reports<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><%= link_to 'Report',  search_admin_tasks_path  %></li>
+            <li><%= link_to 'User Report',  user_report_admin_tasks_path  %></li>
+            <li><%= link_to 'Time Report',  time_report_admin_tasks_path  %></li>
+            <li><%= link_to 'Resource Report',  resource_report_admin_tasks_path %></li>
+            <li><%= link_to 'Task Resource Report',  task_resource_report_admin_tasks_path %></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+      <p class="navbar-text navbar-right">Signed in as <a href="#" class="navbar-link">Tarik Admin</a></p>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>

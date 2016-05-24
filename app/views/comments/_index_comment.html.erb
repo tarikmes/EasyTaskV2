@@ -1,0 +1,14 @@
+
+  <div id="comments">
+    <% @task.comments.reject(&:new_record?).each do |comment| %> 
+      <div class="media">
+        <div class="media-body">
+            <h4 class="media-heading"><%= user_name(comment.created_by) %>
+              <small><%= comment.created_at %></small>
+            </h4>
+              <%= comment.body %>
+        </div>
+      </div>
+    <%end%>
+
+</div>

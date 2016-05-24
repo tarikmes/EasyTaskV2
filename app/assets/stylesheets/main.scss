@@ -1,0 +1,505 @@
+.row {
+	.squere{
+	    position: relative;
+	    height: 71px;
+	    display: block;
+	    border: 1px solid #ccc;
+	    width: 48%;
+	    font-size: 24px;
+	    font-weight: 700;
+	    text-transform: uppercase;
+	    padding-left: 0;
+	    margin-top: 25px;
+	    background-color: #f8f8f8;
+	    margin:1%;
+		a{
+			text-decoration:none;
+			display:inline-block;
+			color:#49696B;
+			
+		}
+		strong{
+		    font-size: 34px;
+		    position: absolute;
+		    right: 15px;
+    		top: 11px;
+    		color:#49696B;
+		}
+		.fa{
+			width: 60px;
+		    padding-left: 15px;
+		    padding-top: 21px;
+		    height: 70px;
+		    font-size: 1.3em;
+		}
+	}
+	a,a:hover, a:visited {
+    	color: #49696B;
+    	text-decoration:none;
+	}
+	p{
+	margin:0;
+	}
+}
+.container{
+	display:block;
+	width:100%;
+	padding: 0 130px;
+}
+
+
+/*tickets*/
+.ticket_container{
+	width:100%;
+	position:relative;
+	display:block;
+	padding:0 120px;
+	.ticket{
+		width:100%;
+		margin:1% 0;
+		display:inline-block;
+		background-color: #f8f8f8;
+		border: 1px solid #ccc;
+		height:120px;
+		color: #49696B;
+		.user_container{
+			width:10%;
+			display:inline-block;
+			border-right: 1px solid #ccc;
+    		height: 100%;
+    		padding-top: 10px;
+			.user_icon{
+			    width: 60px;
+			    height: 60px;
+			    display: block;
+			    margin: 0 auto;
+			    border-radius: 30px;
+			    /* border: 1px solid #ccc; */
+			    color: #ccc;
+			    /* background-color: #ccc; */
+			    padding-top: 8px;
+			    padding-left: 12px;
+			    .fa{
+			    	color: #49696B;
+			    }
+			}
+			.user{
+			    width: 100%;
+			    text-align: center;
+			    display: block;
+			    font-size: 24px;
+			    text-transform: capitalize;
+			    color: #A5A5A5;
+			        line-height: 20px;
+			}
+		}
+		.inner_ticket{
+			width:90%;
+			display:inline-block;
+			
+			position:relative;
+			height: 100%;
+			vertical-align: bottom;
+		    height: 100%;
+		    margin-left: -4px;
+			.task_name{
+				color:#4da6ff;
+				text-transform:capitalize;
+				padding-left: 1%;
+				white-space: nowrap;
+			    overflow: hidden;
+			    text-overflow: ellipsis;
+			    font-size: 28px;
+			    color: #49696B;
+			}
+			.estimate{
+				width: 35px;
+			    height: 20px;
+			    position: absolute;
+			    bottom: 12px;
+			    right: 10px;
+			    text-align: center;
+			    color: #49696B;
+			    font-size: 25px;
+			    display:none;
+			}
+			.task-discription{
+				padding-left:1%;
+			}
+			.progress{
+				width:98%;
+				margin-left:1%;
+			}
+			.fa{
+			position:absolute;
+			top:5px;
+			right:5px;
+			}
+		}
+	}
+}
+@media all 
+and (min-device-width : 320px) 
+and (max-device-width : 768px) { 
+.task_form{
+	.col-xs-12{
+		padding:0;
+	}
+}
+	.row {
+	//margin:0;
+		.squere{
+			width:100%;
+			margin:0;
+			padding:0;
+			padding-top: 14px;
+    		height: 105px;
+    		border: none;
+		    border-bottom: 1px solid #ccc;
+		    border-top: 1px solid #ccc;
+		    padding-left: 15px;
+			}
+		}
+		.container{
+			width:100%;
+			padding:0;
+		}
+		.ticket_container{ 
+			padding:0;
+			.ticket{
+				width: 100%;
+			    margin: 0;
+			    border-left: 0;
+			    border-right: 0;
+			    height:120px;
+			    .user_container{
+			    width:30%;
+			    	.user{
+			    		font-size:3.5vw;
+			    	}
+			    }
+			    .estimate{
+					//display:none;
+				}
+				.task-discription{
+					display:none;
+				}
+				.inner_ticket{
+					width:70%;
+					.task_name{
+						white-space: initial;
+					    overflow: initial;
+					    text-overflow: initial;
+					    height: 90px;
+    					overflow: hidden;
+   						width: 87%;
+   						padding-left: 5%;
+					}
+				}
+			}
+		}
+
+		.navbar-default{
+			margin-bottom:0;
+		}
+		.row .col-md-6 strong{
+		top:23px;
+		}
+}
+
+
+
+.commenter{
+	font-size:20px;
+	margin-bottom: 0;
+}
+.example-twitter {
+  position:relative;
+  padding:15px;
+  margin:0 0 0.5em;
+  color:#333;
+  background:#F7F7F7;
+  /* css3 */
+  -webkit-border-radius:10px;
+  -moz-border-radius:10px;
+  border-radius:10px;
+}
+
+.example-twitter p {font-size:14px; line-height:1.25em;}
+
+/* this isn't necessary, just saves me having to edit the HTML of the demo */
+.example-twitter:before {
+  content:url(twitter-logo.gif);
+  position:absolute;
+  top:-60px;
+  left:0;
+  width:155px;
+  height:36px;
+  /* reduce the damage in FF3.0 */
+  display:block;
+}
+
+/* display of quote author (alternatively use a class on the element following the blockquote) */
+.example-twitter + p {padding-left:15px; font:14px Arial, sans-serif;}
+
+
+
+//TARIK DODAO
+
+/*font Awesome http://fontawesome.io*/
+@import url(//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
+/*Comment List styles*/
+.comment-list .row {
+  margin-bottom: 0px;
+}
+.comment-list .panel .panel-heading {
+  padding: 4px 15px;
+  position: absolute;
+  border:none;
+  /*Panel-heading border radius*/
+  border-top-right-radius:0px;
+  top: 1px;
+}
+.comment-list .panel .panel-heading.right {
+  border-right-width: 0px;
+  /*Panel-heading border radius*/
+  border-top-left-radius:0px;
+  right: 16px;
+}
+.comment-list .panel .panel-heading .panel-body {
+  padding-top: 6px;
+}
+.comment-list figcaption {
+  /*For wrapping text in thumbnail*/
+  word-wrap: break-word;
+}
+/* Portrait tablets and medium desktops */
+@media (min-width: 768px) {
+  .comment-list .arrow:after, .comment-list .arrow:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-color: transparent;
+  }
+  .comment-list .panel.arrow.left:after, .comment-list .panel.arrow.left:before {
+    border-left: 0;
+  }
+  /*****Left Arrow*****/
+  /*Outline effect style*/
+  .comment-list .panel.arrow.left:before {
+    left: 0px;
+    top: 30px;
+    /*Use boarder color of panel*/
+    border-right-color: inherit;
+    border-width: 16px;
+  }
+  /*Background color effect*/
+  .comment-list .panel.arrow.left:after {
+    left: 1px;
+    top: 31px;
+    /*Change for different outline color*/
+    border-right-color: #FFFFFF;
+    border-width: 15px;
+  }
+  /*****Right Arrow*****/
+  /*Outline effect style*/
+  .comment-list .panel.arrow.right:before {
+    right: -16px;
+    top: 30px;
+    /*Use boarder color of panel*/
+    border-left-color: inherit;
+    border-width: 16px;
+  }
+  /*Background color effect*/
+  .comment-list .panel.arrow.right:after {
+    right: -14px;
+    top: 31px;
+    /*Change for different outline color*/
+    border-left-color: #FFFFFF;
+    border-width: 15px;
+  }
+}
+.comment-list .comment-post {
+  margin-top: 6px;
+}
+
+
+//TICKET INFO
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700);
+
+body {
+    background-color:#F7F7F7;
+    font-family: 'Open Sans', sans-serif;
+}
+/*Navbar*/
+.navbar-default {
+    background-color:#fff;
+    border-bottom-color:#E3E3E3;
+}
+.navbar-default .navbar-nav>.active>a, 
+.navbar-default .navbar-nav>.active>a:hover, 
+.navbar-default .navbar-nav>.active>a:focus{
+    background-color:transparent!important;
+}
+.navbar-default .btn-compose {
+    padding-right:10px;
+    border-right:1px solid #F0F0F0;
+}
+/*Forms setup*/
+
+/*Content Container*/
+.content-container {
+    background-color:#fff;
+    padding:35px 20px;
+    margin-bottom:20px;
+}
+h1.content-title{
+    font-size:32px;
+    font-weight:300;
+    text-align:center;
+    margin-top:0;
+    margin-bottom:20px;
+    font-family: 'Open Sans', sans-serif!important;
+}
+/*Compose*/
+.btn-send{
+    text-align:center;
+    margin-top:20px;
+}
+/*mail list*/
+
+ul.mail-list{
+    padding:0;
+    margin:0;
+    list-style:none;
+        border: 1px solid #ccc;
+
+}
+ul.mail-list li a{
+    display:block;
+    border-bottom:1px dotted #CFCFCF;
+    padding:20px;
+    text-decoration:none;
+}
+ul.mail-list li:last-child a{
+    border-bottom:none;
+}
+ul.mail-list li a:hover{
+    background-color:#DBF9FF;
+}
+ul.mail-list li span{
+    display:block;
+}
+ul.mail-list li span.mail-sender{
+    font-weight:600;
+    color:#8F8F8F;
+}
+ul.mail-list li span.mail-subject{
+    color:#8C8C8C;
+}
+ul.mail-list li span.mail-message-preview{
+    display:block;
+    color:#A8A8A8;
+}
+.mail-search{
+    border-bottom-color:#7FBCC9!important; 
+}
+//3 tacke...
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+//tarik
+.glyphicon-lg
+{
+    font-size:4em
+}
+.info-block
+{
+	border:1px solid #ccc;
+    border-right:5px solid #E6E6E6;margin-bottom:25px
+}
+.info-block .square-box
+{
+    width:100px;min-height:110px;margin-right:22px;text-align:center!important;background-color:#676767;padding:10px 0
+}
+.info-block.block-info
+{
+    border-color:#20819e
+
+}
+.info-block.block-info .square-box
+{
+    background-color:#20819e;color:#FFF
+}
+.username{
+	display:block;
+	width:100px;
+	padding: 0 10px;
+}
+.delete{
+    position:absolute;
+    right:30px;
+    top:5px;
+    .fa-2x{
+    	font-size:1.4em;
+    }
+ }
+.delete-user{
+    position:absolute;
+    right:30px;
+    top:5px;
+    .fa-2x{
+    	font-size:1.4em;
+    }
+ }
+
+ .red{
+ i{
+ 	color:red; 
+ 	}
+ }
+  .blue{
+  i{
+ 	color:#404096;
+ 	}
+ }
+   .green{
+   i{
+ 	color:#19A219;
+ 	}
+ }
+    .yellow{
+    i{
+ 	color:#B59905;
+ 	}
+ }
+ .pink{
+ i{
+ 	color:#C52C47;
+ 	}
+ }
+ .sucmurasta{
+ i{
+ color:#1e88a2;
+ }
+ }
+ .info-box{
+ width:calc(100% - 122px);
+ 	*{
+ 		word-break: break-all;
+ 	}
+ }
+ .margin-bottom-20{
+ 	margin-bottom:20px;
+ }
+ .name1{
+ 	width:90%;
+ }
+
+ 

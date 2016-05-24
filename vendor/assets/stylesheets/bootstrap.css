@@ -1,0 +1,34 @@
+        [OperationContract]
+        [Timing]
+        List<Campaign> GetAllCampaigns(int companyId);
+
+        [OperationContract]
+        [Timing]
+        void SaveCampaign(Campaign campaign);
+		
+		
+		
+CREATE TABLE [dbo].[ES_CAMPAIGN_COMPANY2MODEL](
+		[ID] [int] IDENTITY(1,1) NOT NULL,
+		[CAMPAIGN_ID] [int] NOT NULL,
+		[COMPANY2MODEL_ID] [int] NOT NULL,
+		[MONTHLY_FEE] [money] NULL,	
+		[ONE_TIME_REDEMPTION_FEE] [money] NULL,	
+		[FUND_FEE] [money] NULL,
+		[CREATE_DATE] [datetime] NOT NULL,
+		[CREATED_BY] [int] NULL,
+		[MODIFIED_DATE] [datetime] NULL,
+		[MODIFIED_BY] [int] NULL,		
+		
+		
+		
+		            using (var container = UnityContainerFactory.GetContainer())
+            using (var unitOfWork = new UnitOfWork(container))
+            {
+                unitOfWork.GetRepository<ICompanyAttachmentRepository>().Save(companyAttachment);
+                unitOfWork.Commit();
+            }
+
+            return companyAttachment.Id;
+			
+			RatePlanSelectionGrid

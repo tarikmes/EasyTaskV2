@@ -1,0 +1,61 @@
+<div class="container">
+  <div class="row task_form">
+    <div class="col-xs-12 col-sm-8 col-md-4 col-md-offset-4">
+      <div class="login-panel panel panel-default">
+        <div class="panel-heading">Edit task</div>
+          <div class="panel-body">
+            <%= form_for @task, url:admin_task_path, method: :patch , html: {role: "form"} do |f| %>
+              <fieldset>
+                <div class="form-group">
+                  <%= f.label :name %><br>
+                  <%= f.text_field :name, class: "form-control" %>
+                </div>
+                  <div class="form-group">
+                  <%= f.label :description %><br>
+                  <%= f.text_field :description, class: "form-control" %>
+                </div>
+                <% if @task.is_parent == 0 %>
+                <div class="form-group">
+                  <%= f.label :estimate %><br>
+                  <%= f.text_field :estimate, class: "form-control" %>
+                </div>
+                <div class="form-group">
+                  <%= f.label :logged_time %><br>
+                  <%= f.text_field :logged_time, class: "form-control" %>
+                </div>
+                <div class="form-group">
+                  <%= f.label :parcent_done %><br>
+                  <%= f.text_field :parcent_done, class: "form-control" %>
+                </div>
+                                <div class="form-group">
+                  <%= f.label :created_at %><br>
+                  <%= f.text_field :created_at, :value => nice_date_form(@task.created_at), class: "form-control" %>
+                </div>
+                <div class="form-group">
+                	<%= f.label :user_id %>
+                	<%= f.collection_select :user_id, User.all, :id, :first_name, {}, {class: "form-control" } %>
+                </div>
+                <div class="form-group">
+                  <%= f.label :task_status_id %>
+                  <%= f.collection_select :task_status_id, TaskStatus.all, :id, :name, {}, {class: "form-control" }  %>
+                <div>
+                <% end %>
+                <%= f.submit :submit, {class: "btn btn-primary" } %>
+              </fieldset>
+
+             <!-- <%= f.fields_for :used_resources do |ff| %>
+                <%= ff.label :resource_id, "Resource Name" %>
+                <%= ff.collection_select :resource_id, Resource.all, :id, :name, {prompt: 'Add Resource'}, {class: "form-control" , id: "resources_dd"} %>
+                <%= ff.label :used, "Used Resources" %>
+                <%= ff.text_field :used, class: "form-control", min: "1", max: "200", placeholder: "Number" , :required => false %>
+              <% end %>-->
+              
+            <% end %>
+            <%= render "comments/comment" %>
+          </div>
+        </div>
+      </div>
+    </div><!-- /.col-->
+  </div><!-- /.row -->
+</div>
+

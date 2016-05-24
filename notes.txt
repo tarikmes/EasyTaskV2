@@ -1,0 +1,82 @@
+
+
+HANI
+- U helper stavljas stvari koje imaju veze sa UI tipa crveno/zeleno u odnosu na status taska
+- Iz modela mozes izvuci info koji ti treba kao sto je bio primjer sa brojem taskova u nekom statusu
+- Koristi Rails 5
+- Problem sa resursima koji si imao je bio taj da nije se index nije pozivao i zbog toga se je variabla @resources bila nill
+  Rjesenje je u tome da u create dodas Resources.all. Komantari su radili zato sto je task vezan za njih, a on je bio napunjen.
+- U Rails 3 npr Resources.all lista sve iz baze PRIJE nego uradi save, dok Rails 4 poziva Resource.all nakon sto spasi u bazu 
+- Rasources ces samo prikazivati na HTML neces raditi nikakav save dok ne odradis create Taska
+- Realno na Create Task ces imati form_for Used Resources, a ne kao do sad resources. Bukvalno Resources i UsedResources nece biti povezani
+- Da bi ovo zavrsio koristi accepts_nested_attributes_for
+- Dodati validaciju na model
+- Ona citava zajebancija se desila iz razloga sto je na new formi bio NE INICIJALIZIRAN objekat :task , a trebala je biti instanca @task
+- Page specific javascript hendlas na osnovu kontrolera npr. ako je taj kontroler vrti taj kod ( ima dobra stranica )
+
+
+STATUSI
+- draft - 1
+- in progress - 2
+- feedback - 3
+- finished - 4
+- removed - 5
+
+HAMER radi finalni UI - TARIK NE SERI SA SMINKOM NEK SE POSALJE
+- Sve ide u dva reda. PRvi screen je odlican samo ga treba napraviti da moze u dva reda
+- Trebaju mi kockice koje idu u dva reda. Lijevo je font awsame ikonica i text ispod, a pored 4 linije texta
+
+TO DO
+- Napraviti search na user/ticket/task
+- Rijesiti dodavanje resursa na ticket
+- Izvjestaji tablela od par kolona
+- Registracija - OK
+- Postaviti app na GitHub
+- Validacija html/model
+- Razdvojiti rasurce na Manage i Create - OK
+- Admin moze vidjeti samo svoje Usere I Taskove
+
+
+• Izvještaj o zadacima u datom statusu
+• Izvještaj o zadacima za datog korisnika
+• Izvještaj o zadacima u datom vremenskom periodu
+• Izvještaj o utrošenim resursima za dati vremenski period - OVAJ SE MOZE SREDITI
+
+• Izvještaj o utrošenim resursima za dati zadatak
+
+
+
+• Izvještaj o zadacima koji se ne izvršavaju u planiranom vremenu - Ovo neces radit sa gem nego ces sve nakucati
+
+PLAN
+• Kratko predstavljanje trenutnih trendova u razvoju web aplikacija - PON
+• Upoznavanje sa MVC arhitekturom - UTORAK
+• Kratko upoznavanje sa Ruby On Rails framework-om - ADNAN 
+• Analiza i dizajn aplikacije - SRIJEDA
+• Izrada i testiranje aplikacije - CETVRTAK
+• Objavljivanje web aplikacije - CETVRTAK
+
+
+
+BACK
+
+<div class="ticket_container">
+  <% @users.each do |user| %>
+    <%= link_to edit_admin_user_path(user) do %>
+      <div class="ticket">
+        <div class="user_container">
+          <div class="user_icon">
+            <i class="fa fa-user fa-3x"></i>
+          </div>
+          <span class="user"><%= user.user_type.name %></span>
+        </div>
+        <div class="inner_ticket">
+          <h1 class="task_name"><%= user.first_name %> &nbsp; <%= user.last_name %></h1>
+
+
+          <h4 class="task-discription"><%= user.email %></h4>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>

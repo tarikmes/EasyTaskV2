@@ -1,0 +1,23 @@
+<div class="container">
+	<div class="row">
+		<%= link_to admin_tasks_path(:task_status_id=>1) do %>
+			<p class="col-md-6 squere pink"><i class="fa fa-list-alt" ></i>Draft<strong><%= task_status_count(1) %></strong></p>
+		<% end %>
+
+		<%= link_to admin_tasks_path(:task_status_id=>2) do %>
+			<p class="col-md-6 squere green"><i class="fa fa-cog"></i>InProgress<strong><%= task_status_count(2) %></strong></p>
+		<% end %>
+
+		<%= link_to admin_tasks_path(:task_status_id=>3) do %>
+			<p class="col-md-6 squere blue"><i class="fa fa-search"></i>Feedback<strong><%= task_status_count(3) %></strong></p>
+		<% end %>
+
+		<%= link_to admin_tasks_path(:task_status_id=>4) do %>
+			<p class="col-md-6 squere yellow"><i class="fa fa-check-square-o"></i>Finished<strong><%= task_status_count(4) %></strong></p>
+		<% end %>
+
+		<%= link_to admin_tasks_path(:task_status_id=>5) do %>
+			<p class="col-md-6 squere red"><i class="fa fa-minus-circle"></i>Removed<strong><%= task_status_count(5) %></strong></p>
+		<% end %>
+	</div>
+</div>

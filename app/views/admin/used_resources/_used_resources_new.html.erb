@@ -1,0 +1,8 @@
+                <fieldset>
+                <%= f.label :resource_id, "Resource eee" %>
+                <%= f.collection_select :resource_id, Resource.all, :id, :name, {prompt: 'Add Resource'}, {class: "form-control" , id: "resources_dd"} %>
+                <%= f.label :used, "Used Resources" %>
+                <%= f.text_field :used, class: "form-control", value: "1", min: "1", max: "200", placeholder: "Number" , :required => false %>
+                </fieldset>
+
+

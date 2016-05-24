@@ -1,0 +1,16 @@
+<form role="form">
+  <h4>Leave a Comment:</h4>
+    <%= form_for [@task, @task.comments.build] do |f| %>
+      <form role="form">
+        <div class="form-group">
+          <%= f.text_area :body, class: "form-control" %>
+        </div>
+          <%= f.hidden_field :created_by, :value => current_user.id %>
+          <p>
+            <%= f.submit :submit %>
+          </p>
+    <% end %>
+</form>
+
+
+
