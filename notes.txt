@@ -28,7 +28,7 @@ HAMER radi finalni UI - TARIK NE SERI SA SMINKOM NEK SE POSALJE
 
 TO DO
 - Napraviti search na user/ticket/task
-- Rijesiti dodavanje resursa na ticket
+- Rijesiti dodavanje resursa na ticket - OK
 - Izvjestaji tablela od par kolona
 - Registracija - OK
 - Postaviti app na GitHub
@@ -56,6 +56,8 @@ PLAN
 • Izrada i testiranje aplikacije - CETVRTAK
 • Objavljivanje web aplikacije - CETVRTAK
 
+
+- GitHub test
 
 
 BACK
