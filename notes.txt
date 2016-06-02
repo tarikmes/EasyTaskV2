@@ -35,18 +35,18 @@ TO DO
 - Validacija html/model
 - Razdvojiti rasurce na Manage i Create - OK
 - Admin moze vidjeti samo svoje Usere I Taskove
+- Pogledati kako ide prica sa user story (treba li se on vidjeti na index-u i kako se izboriti sa njim u reportima )///////////////
+  - Manage tasks prikazivati user story (malo opcija kad se moze brisati, a kad ne. Najbolje brisati task po task pa onda kad nista ne ostane user story)
+  - Reporti skoro kao task samo prikazati sve taskove u user story (valjalo bi kad bi ne na cmb to moglo kako oznaciti)
 
 
 • Izvještaj o zadacima u datom statusu
 • Izvještaj o zadacima za datog korisnika
 • Izvještaj o zadacima u datom vremenskom periodu
 • Izvještaj o utrošenim resursima za dati vremenski period - OVAJ SE MOZE SREDITI
-
 • Izvještaj o utrošenim resursima za dati zadatak
-
-
-
 • Izvještaj o zadacima koji se ne izvršavaju u planiranom vremenu - Ovo neces radit sa gem nego ces sve nakucati
+
 
 PLAN
 • Kratko predstavljanje trenutnih trendova u razvoju web aplikacija - PON
@@ -60,25 +60,6 @@ PLAN
 - GitHub test
 
 
-BACK
-
-<div class="ticket_container">
-  <% @users.each do |user| %>
-    <%= link_to edit_admin_user_path(user) do %>
-      <div class="ticket">
-        <div class="user_container">
-          <div class="user_icon">
-            <i class="fa fa-user fa-3x"></i>
-          </div>
-          <span class="user"><%= user.user_type.name %></span>
-        </div>
-        <div class="inner_ticket">
-          <h1 class="task_name"><%= user.first_name %> &nbsp; <%= user.last_name %></h1>
-
-
-          <h4 class="task-discription"><%= user.email %></h4>
-        </div>
-      </div>
-    <% end %>
-  <% end %>
-</div>
+READ
+- Respond to
+- Kad se tacno AJAX okida

@@ -60,13 +60,16 @@ class Admin::TasksController < ApplicationController
   end
 
   def search
-    @search = Task.search(params[:q])
-    @tasks = @search.result
+    #@tasks = Task.all   
+    if params[:status] != nil
+      @tasks = Task.status(params[:status][:task_status_id])
+    end
   end
 
   def user_report
-    @search = Task.search(params[:q])
-    @tasks = @search.result
+    if params[:user] != nil
+      @tasks = Task.user_id(params[:user][:user_id])
+    end
   end
 
   def time_report
@@ -90,9 +93,15 @@ class Admin::TasksController < ApplicationController
   end
 
   def task_resource_report
-    @search = UsedResource.search(params[:q])
-    @resources = @search.result
-    #@resources = UsedResource.all
+    #@resources = UsedResource.all #zasto se ajax ne poziva sa ovim, a radi sa kodom ispod
+    #kao da ga poziva tek kada vrati objekat ali zasto onda opet ne poziva jer je ovaj vratio se UR
+    if params[:task] != nil
+      @resources = UsedResource.used_for_task(params[:task][:task_id])
+    end
+  end
+
+  def delayed_tasks_report
+    @tasks = Task.delayed
   end
 
 

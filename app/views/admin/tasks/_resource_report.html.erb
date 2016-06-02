@@ -1,0 +1,60 @@
+<% if @tasks.count>0 %>     
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="alert alert-success" style="display:none;">
+                    <span class="glyphicon glyphicon-ok"></span> Drag table row and cange Order</div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>
+                                Task Name
+                            </th>
+                            <th>
+                                Resource Name
+                            </th>
+                            <th>
+                                Used Resources
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                      <% @used_resources.each do |resource| %>
+                        <tr>
+                            <td>
+                                <%= resource.task.name %>
+                            </td>
+                            <td>
+                                <%= resource.resource %>
+                            </td>
+                            <td>
+                               <%= resource.used %> 
+                            </td>
+                        </tr> 
+                        <% end %>            
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+<% else %>
+    <div id = "search_results">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="alert alert-success" style="display:none;">
+                        <span class="glyphicon glyphicon-ok"></span> Drag table row and cange Order</div>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    No Resources Were Used At Given Period
+                                </th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+<% end %>

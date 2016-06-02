@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 namespace :admin do
 resources :tasks do
   collection do
-    get 'search','user_report', 'time_report','resource_report', 'task_resource_report'
+    get 'search','user_report', 'time_report','resource_report', 'task_resource_report', 'delayed_tasks_report'
   end
 end
 end

@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
 	has_many :tasks
 	belongs_to :user_type
 
+
   def task_status_count(status)
     self.tasks.status(status).count
   end

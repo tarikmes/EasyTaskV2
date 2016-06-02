@@ -9,11 +9,16 @@ class Task < ActiveRecord::Base
 
   accepts_nested_attributes_for :used_resources
   #accepts_nested_attributes_for :resources
+
+  validates_presence_of :name
+  #validates_presence_of :estimate
+  validates_presence_of :user_id
   
 	scope :user_id, -> (user_id) { where user_id: user_id }
   scope :status, -> (task_status_id) { where task_status_id: task_status_id }
   scope :created_by, -> (user_id) { where created_by: user_id }
   scope :is_parent, -> (is_parent) {where is_parent: is_parent}
-  scope :created_at_range, -> (start_date, end_date) { where "created_at > ? AND created_at < ?",start_date.beginning_of_day, end_date.end_of_day}
+  scope :created_at_range, -> (start_date, end_date) { where "created_at > ? AND created_at < ? ",start_date.beginning_of_day, end_date.end_of_day}
+  scope :delayed, -> {where "logged_time > estimate"}
 
 end
